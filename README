@@ -1,0 +1,30 @@
+Device-Velleman-K8055
+
+Currently this module is just a Win32::API wrapper around the K8055D.dll that Velleman
+supplies with the board. Since that will only work on Win32 systems, I intend
+to write something myself that will be portable to other platforms...patches for
+this are welcome.
+
+You need to copy this DLL in a directory in your path (e.g. C:\\WINDOWS)
+The DLL can be found inside this package.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+If you indeed choose to run 'make test', please keep an eye on your screen to see what
+tests are run. One of the tests requires you to press the buttons on the K8055 board.
+
+COPYRIGHT AND LICENCE
+
+Put the correct copyright and licence information here.
+
+Copyright (C) 2005 Jouke Visser
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
