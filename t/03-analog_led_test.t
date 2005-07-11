@@ -2,12 +2,12 @@ use Device::Velleman::K8055 qw(:all);
 use Test::More tests => 1;
 use strict;
 use warnings;
-print STDERR "Watch the leds for the analog input running\n";
-ok(analog_led_test() == 1, "Analog Led Test");
+diag("Watch the leds for the analog output running\n");
+is(analog_led_test(), 1, "Analog Led Test");
 
 sub analog_led_test
 {
-    die "Can't open K8055 device" unless OpenDevice(0) == 0;
+    return -1 unless OpenDevice(0) == 0;
     
     for (my $i = 0; $i < 3; $i++)
     {
